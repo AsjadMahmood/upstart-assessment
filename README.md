@@ -1,6 +1,6 @@
 # Assessment
 
-Upload the assessment to your GitHub profile when you are done
+Upload the assessment to your GitHub/Bitbucket profile when you are done
 
 ## Routing assesment
 
