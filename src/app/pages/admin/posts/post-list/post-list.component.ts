@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, tap } from 'rxjs/operators';
 import { IPost } from 'src/app/models/posts.interface';
 import { PostsService } from 'src/app/services/posts/posts.service';
 

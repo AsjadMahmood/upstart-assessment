@@ -12,19 +12,22 @@ export class PermissionsGuard implements CanActivate {
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean {
+    state: RouterStateSnapshot): boolean | Promise<boolean> {
+
     let access: boolean = false;
 
-    this.authService.permissions.pipe(tap((permissions: string[]) => {
-      if (state.url.includes('/admin/users')) {
-        access = permissions.includes('user.read')
-      }
-      else if (state.url.includes('/admin/posts')) {
-        access = permissions.includes('catalog.read')
-      }
-    })).subscribe((res) => { })
+    return new Promise(async (resolve, reject) => {
+      this.authService.permissions.subscribe((permissions: string[]) => {
+        if (state.url.includes('/admin/users')) {
+          access = permissions.includes('user.read')
+        }
+        else if (state.url.includes('/admin/posts')) {
+          access = permissions.includes('catalog.read')
+        }
+        resolve(access);
+      })
+    })
 
-    return access;
   }
 
 }
