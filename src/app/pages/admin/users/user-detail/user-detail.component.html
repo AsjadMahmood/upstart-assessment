@@ -1,0 +1,43 @@
+<div class="container">
+    <br>
+    <div class="text-center">
+        <h2 class="mb-4">
+            User Detail
+        </h2>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    User Info
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{userDetail.username}}</h5>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            Address :
+                            {{userDetail.address.street}} {{userDetail.address.city}} {{userDetail.address.suite}}
+                            {{userDetail.address.zipcode}}
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    Company Info
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{userDetail.company.name}}</h5>
+                    <p class="card-text">{{userDetail.company.catchPhrase}}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    {{userDetail.company.bs}}
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>

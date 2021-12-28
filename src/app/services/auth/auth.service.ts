@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, of } from 'rxjs';
@@ -13,9 +12,11 @@ interface ICredentials {
   providedIn: 'root',
 })
 export class AuthService {
+
   private userPermissions = new BehaviorSubject([]);
   private loggedIn = false;
-  constructor(private router: Router) {}
+
+  constructor(private router: Router) { }
 
   get permissions() {
     return this.userPermissions.asObservable();

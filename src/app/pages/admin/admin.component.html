@@ -1,17 +1,16 @@
-<h1>TODO: Load this page only if user is logged in</h1>
-<p>Is logged in: {{ isLoggedIn }}  </p>
-
-<h2>Navigation</h2>
-<div class="nav">
-    <ul>
-        <!-- Enable link if user has 'catalog.read' perissions  -->
-        <!-- This link should navigate user to /posts -->
-        <li><a>Posts</a></li>
-
-        <!-- Enable link if user has 'user.read' perissions  -->
-        <!-- This link should navigate user to /users -->
-        <li><a>Users</a></li>
-    </ul>
+<div class="container">
+    <br>
+    <div class="text-center">
+        <h2 class="mb-4">
+            Admin Panel
+        </h2>
+    </div>
+    <nav class="jumbotron">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/admin/posts">Posts</a></li>
+          <li class="breadcrumb-item"><a routerLink="/admin/users">Users</a></li>
+        </ol>
+    </nav>
 </div>
 
 <div>

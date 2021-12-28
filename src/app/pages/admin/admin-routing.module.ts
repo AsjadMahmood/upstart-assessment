@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PermissionsGuard } from 'src/app/helpers/guards/permissions.guard';
 import { AdminComponent } from './admin.component';
 
 const routes: Routes = [
@@ -12,12 +13,14 @@ const routes: Routes = [
     path: 'posts',
     loadChildren: () =>
       import('./posts/posts.module').then((m) => m.PostsModule),
+    canActivate: [PermissionsGuard]    
   },
   // Allow acces to /users if user has 'user.read' permissions
   {
     path: 'users',
     loadChildren: () =>
       import('./users/users.module').then((m) => m.UsersModule),
+    canActivate: [PermissionsGuard]    
   },
   {
     path: '**',
